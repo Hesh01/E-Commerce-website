@@ -1,0 +1,833 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition:all .2s linear;
+    
+}
+
+:root{
+    --main-color: darkgoldenrod;
+    --secondary-color: rgb(243, 203, 102);
+    --text-color1: white;
+    --text-color: black;
+    --border: .1rem solid rgba(255,255,255,.3);
+}
+
+html {
+    scroll-padding-top: 70px; 
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+ul{
+    list-style: none;
+}
+
+.button{
+    width: 150px;
+    padding: 8px;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 2px;
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--text-color1);
+    text-align: center;
+    font-family: "jost", sans-serif;
+}
+
+.button:hover{
+    background-color: var(--main-color);
+    letter-spacing: 0.1rem;
+}
+
+section{
+    padding: 10px 100px;
+  }
+
+  .heading{
+    text-align: center;
+    color: var(--text-color1);
+    text-transform: uppercase;
+    padding: 30px 50px 40px;
+    font-size:38px ;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    font-family: "jost", sans-serif;
+}
+
+.heading span{
+    color: var(--secondary-color);
+}
+
+
+
+/* This is a comment explaining the navbar styles */
+
+.header{
+    background-color: var(--text-color);
+    display: flex;
+    padding: 10px 100px;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    border-bottom: var(--border);
+    z-index: 1000;
+    top: 0; left: 0; right: 0;
+} 
+
+.header .logo img{
+    width: 65px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer
+}
+
+
+@keyframes logorotation{
+    0%,100%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(360deg);
+    }      
+}
+
+.logo img{
+    animation: logorotation 7s infinite alternate;
+}
+
+.header .navbar a{
+    margin: 0 20px;
+    font-size:15px ;
+    color: var(--text-color1);
+    text-transform: uppercase;
+    font-family: "jost", sans-serif;
+}
+
+.header .navbar a.active,
+.header .navbar a:hover{
+    color: var(--main-color);
+    transition: 0.5s;
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem
+}
+
+.header .icons div{
+    color: var(--text-color1);
+    cursor: pointer;
+    font-size: 17px;
+    margin: 8px;
+}
+
+.header .icons div:hover{
+    color: var(--main-color);
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header .search-box{
+    position: absolute;
+    top: 115%; right: 7%;
+    background: var(--text-color1);
+    width: 320px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+}
+
+.header .search-box.active{
+    transform: scaleY(1);
+}
+
+.header .search-box input{
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+    color: var(--text-color);
+    padding: 10px;
+    text-transform: none;
+}
+
+.header .search-box label{
+    cursor: pointer;
+    font-size: 15px;
+    margin-right: 15px;
+    color: var(--text-color);
+}
+
+.header .search-box label:hover{
+    color: var(--secondary-color);
+}
+
+
+
+
+/* This is a comment explaining the home page */
+
+.home{
+    background: url(Images/picture1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
+  }
+  
+  .content{
+      width: 70%;
+      position: absolute;
+      
+      color: var(--text-color1);
+  }
+  
+  .content h1{
+      font-size: 60px;
+      letter-spacing: 2px;
+      line-height: 1.3;
+      font-family: "jost", sans-serif;
+  }
+  
+  .content p{
+      font-size: 18px;
+      margin-top: 10px;
+      word-spacing: 2px;
+      line-height: 25px;
+      margin-bottom: 40px;
+      font-family: "jost", sans-serif;
+  }
+  
+
+/* This is a comment explaining the about page */
+
+.about-us{
+    background:var(--text-color);
+    padding-bottom: 90px;
+}
+
+.about-us .about-main{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+
+.about-us .about-main .about-img{
+    flex: 1 1 45rem;
+    padding: 1rem;
+    animation:float 3s linear infinite;
+    
+}
+
+@keyframes float {
+    0%, 100%{
+      transform: translateY(0rem);
+    }
+    50%{
+      transform: translateY(3rem);
+    }
+  }
+
+
+.about-us .about-main .about-img img{
+    width: 100%;
+    border-radius: 30px;
+}
+
+.about-us .about-main .about-txt{
+    flex: 1 1 45rem;
+    
+}
+
+.about-us .about-main .about-txt h3{
+    font-size: 30px;
+    color: var(--text-color1);
+    padding-bottom: 15px;
+    font-family: "jost", sans-serif;
+}
+
+.about-us .about-main .about-txt p{
+    font-size: 17px;
+    color:  #ccc;
+    line-height: 30px;
+    font-family: "jost", sans-serif;
+    padding: 1rem 0;
+    margin-bottom: 10px;
+}
+
+
+/* This is a comment explaining the product page */
+
+.menu{
+    background-color: var(--text-color1);
+    padding-bottom: 90px;
+}
+
+.menu .heading {
+    color: black;
+}
+
+.menu .menu_box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.menu .menu_box .menu_card{
+    flex: 1 1 30rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.menu .menu_box .menu_card .menu_image{
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.menu .menu_box .menu_card .menu_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+}
+
+.menu .menu_box .menu_card .menu_image:hover img{
+    transform: scale(1.1);
+}
+
+.menu .menu_box .menu_card .small_card{   
+    position: absolute;  
+    top: 0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    right: -20%; 
+    opacity: 0;
+    transition: 0.9s;
+}
+
+.menu .menu_box .menu_card:hover .small_card{
+    right: 10%;
+    opacity: 1;
+}
+
+.menu .menu_box .menu_card .small_card i{
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 40px;
+    color: var(--text-color1);
+    cursor: pointer;
+    text-shadow: 0 0 6px #000;
+    transition: 0.2s;
+}
+
+.menu .menu_box .menu_card .small_card i:hover{
+    color: var(--secondary-color);
+}
+
+.menu .menu_box .menu_card .menu_info{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.menu .menu_box .menu_card .menu_info h2{
+    width: 60%;
+    margin: 10px auto 10px auto;
+    font-family: "jost", sans-serif;
+    font-size: 25px;
+    color: var(--secondary-color);
+}
+
+.menu .menu_box .menu_card .menu_info p{
+    font-family: "jost", sans-serif;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: 8px;
+    line-height: 21px;
+}
+
+.menu .menu_box .menu_card .menu_info h3{
+    margin-top: 10px;
+    font-family: "jost", sans-serif;
+    font-size: 17px;
+}
+
+.menu .menu_box .menu_card .menu_info .menu_icon{
+    color: var(--secondary-color);
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.menu .menu_box .menu_card .menu_info .button{
+    background-color: var(--text-color);
+}
+
+
+/* This is a comment explaining the gallery page */
+
+.gallery{
+    background-color: var(--text-color);
+    padding-bottom: 90px;
+}
+
+.gallery .gallary_image_box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.gallery .gallary_image_box .gallary_image{
+    display: flex;
+    flex: 1 1 40rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background: var(--text-color);
+}
+
+.gallery .gallary_image_box .gallary_image img{
+    width: 100%;
+    transition: 0.3s;
+}
+
+.gallery .gallary_image_box .gallary_image:hover img{
+    opacity: 0.4;
+}
+
+.gallery .gallary_image_box .gallary_image h3{
+    position: absolute;
+    font-size: 35px;
+    margin-bottom: 130px;
+    color: var(--secondary-color);
+    font-family: "jost", sans-serif;
+    z-index: 5;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.gallery .gallary_image_box .gallary_image:hover h3{
+    opacity: 1;
+}
+
+.gallery .gallary_image_box .gallary_image p{
+    position: absolute;
+    width: 300px;
+    margin-top: 30px;
+    padding: 0 20px;
+    text-align: center;
+    font-family: "jost", sans-serif;
+    font-size: 17px;
+    color: var(--text-color1);
+    line-height: 24px;
+    opacity: 0;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.gallery .gallary_image_box .gallary_image:hover p{
+    opacity: 1;
+}
+
+
+
+/* This is a comment explaining the review page */
+
+.review{
+    background-color: var(--text-color1);
+    padding-bottom: 90px;
+}
+
+.review .slider-wrapper{
+    overflow: hidden;
+    margin: 0 60px 40px;
+}
+
+.review .swiper-pagination-bullet{
+    width: 13px;
+    height: 13px;
+    opacity: 1;
+    background: var(--secondary-color);
+}
+
+.review .swiper-slide-button{
+    margin-top: -50px;
+    color: var(--text-color);
+    transition: 0.3s ease;
+}
+
+.review .swiper-slide-button:hover{
+    color: var(--secondary-color);
+}
+
+.review .heading {
+    color: black;
+}
+
+.review .review-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+    text-align: center;
+}
+
+.review .review-box .user-img{
+    width: 45%;
+    height: 45%;
+    margin-bottom: 50px;
+    object-fit: cover;
+    border-radius: 100px;
+    
+}
+
+.review .review-box .name{
+    margin-bottom: 16px;
+    font-size: 25px;
+}
+
+.review .review-box .feedback{
+    font-size: 15px;
+    line-height: 25px;
+}
+
+
+/* This is a comment explaining the contact us page */
+
+.contact-us{
+    background-color: var(--text-color);
+    padding-bottom: 90px;
+    color: var(--text-color1);
+}
+
+.contact-us .contact-main{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-us .contact-details{
+flex: 1 1 45rem;
+}
+
+.contact-us .contact-details .info{
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+    align-items: center;
+}
+
+.contact-us .contact-details .info i {
+    font-size: 20px;
+}
+
+.contact-us .contact-details .info p{
+    font-size: 20px;
+    font-family: "jost", sans-serif;
+}
+
+.contact-us .contact-form{
+    flex: 1 1 45rem;
+    max-width: 50%;
+    margin-top: 30px;
+}
+
+.contact-us .contact-form .form-input{
+    width: 100%;
+    height: 50px;
+    padding: 0 12px;
+    outline: none;
+    margin-bottom: 16px;
+    margin-top: 10px;
+    background: var(--text-color1);
+    border-radius: 10px;
+    border: 1px;
+}
+
+.contact-us .contact-form textarea.form-input{
+    height: 100px;
+    padding: 12px;
+    resize: vertical;
+}
+
+.contact-us .contact-form .submit-button{
+    background: var(--text-color1);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight:bold;
+    font-family: "jost", sans-serif;
+    font-size: 15px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-us .contact-form .submit-button:hover{
+    background: var(--secondary-color);
+}
+
+
+
+/* This is a comment explaining the footer */
+
+footer{
+    width: 100%;
+    padding: 30px 0 0 20px;
+    background: var(--text-color1);
+}
+
+footer .footer_main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    
+}
+
+footer .footer_main .footer_tag{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+footer .footer_main .footer_tag h2{
+    color: var(--text-color);
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-family: "jost", sans-serif;
+}
+
+footer .footer_main .footer_tag p{
+    margin: 10px 0;
+    font-family: "jost", sans-serif;
+    font-size: 16px;
+}
+
+footer .footer_main .footer_tag a{
+    display: block;
+    margin: 10px 0;
+    font-family: "jost", sans-serif;
+    font-size: 16px;
+}
+
+footer .footer_main .footer_tag i{
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+footer .footer_main .footer_tag i:hover{
+    color: var(--secondary-color);
+}
+
+footer .end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 15px;
+}
+
+footer .end span{
+    color: var(--secondary-color);
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+
+/*loader*/
+
+.loader-container {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    height: 100%;
+    width: 100%; 
+    z-index: 1000000000;
+    background-color: var(--text-color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+
+.loader-container.fade-out {
+    top: 110%; 
+    opacity: 0; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media(max-width:1050px){
+
+    html{
+      font-size: 55%;
+    }
+
+    .about-us .about-main .about-img img{
+        width: 100%;
+    }
+
+}
+
+
+@media(max-width:991px){
+
+    html{
+      font-size: 45%;
+    }
+    
+    section{
+        padding: 10px 35px;
+      }
+
+    .header{
+      padding: 10px 35px;
+    }
+  
+    .header .navbar a{
+        margin: 0 10px;
+    }
+    
+    .about-us .about-main .about-img img{
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    
+    .contact-main .contact-form {
+        max-width: 100%;
+    }
+
+    .contact-us .contact-main{
+        flex-direction: column-reverse;
+
+    }
+}
+
+
+
+
+@media(max-width:768px){
+
+    html{
+        font-size: 40%;
+      }
+    
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: var(--text-color);
+        width: 150px;
+        transition: transform 0.3s ease;
+    }
+
+    .header .navbar.active{
+        right: 0;
+    }
+
+    .header .navbar a{
+        display: block;
+        margin: 10px;
+        padding: 10px;
+        color: var(--text-color1);
+        font-size: 10px;
+    }
+
+    .header .search-box{
+        width: 200px;
+        height: 35px;
+    }
+
+    .header .logo img{
+        width: 60px;
+        height: 45px;
+    }
+
+    .home{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home .content h1{
+        font-size: 48px;
+    }
+
+    .home .content p{
+        font-size: 14px;
+    }
+
+    .about-us .about-main .about-img {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .about-us .about-main .about-img img{
+        width: 95%;
+        padding-bottom: 10px;
+    }
+        
+}
+
+
+
+
+
+
+
+
+@media(max-width:450px){
+
+    html{
+      font-size: 35%;
+    }
+    
+    .header .logo img{
+        width: 55px;
+        height: 40px;
+    }
+
+    .home .content h1{
+        font-size: 38px;
+    }
+
+}
